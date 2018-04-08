@@ -3,9 +3,11 @@ package com.aiprogram.controller;
 import com.aiprogram.entity.User;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.security.PublicKey;
 
 /**
@@ -16,16 +18,23 @@ import java.security.PublicKey;
 public class Usercontroller {
 
     //处理请求，每一个请求都对应一个方法且返回值都是String 返回的值接上我之前默认的路径，就可以找到对应的页面
-    @RequestMapping("/test")
+    @RequestMapping("/test/{name}/{id}")
     //返回String类型的写法
-    public String testUser(ModelMap modelMap){
+    public String testUser(ModelMap modelMap, HttpServletRequest request, @PathVariable("name") String name1,@PathVariable("id") Integer id1){
+        //我们可以在请求上面带些参数我们来获取带的参数信息(处理的是get请求)
+        System.out.println(name1);
+        System.out.println(id1);
+        //在这里可以做一些 request的操作
+//        request.getParameter("");
         //具体处理事务
         User user = new User();
         user.setId(17);
         user.setName("没想法的岁月");
         modelMap.addAttribute("user", user);
         //处理完后在根据返回值调到指定的页面
-        return "user";
+//        return "user";
+        //我们在这里重定向页面
+        return "redirect:/user/demo";
     }
     //返回modelAndView的写法
     @RequestMapping("/demo")
@@ -38,5 +47,23 @@ public class Usercontroller {
         user.setId(12);
         model.addObject("user", user);
         return model;
+    }
+    //这里在演示请求post的请求
+    @RequestMapping("/demo1")
+    public String testUser2(){
+
+//        String id = request.getParameter("id");
+//        String name = request.getParameter("name");
+//
+//        User user = new User();
+//        user.setId(16);
+//        user.setName("SprintMvc");
+//        modelMap.addAttribute("user", user);
+        return "demo1";
+    }
+    @RequestMapping("/Demo2")
+    public String testUser3(ModelMap modelMap,User user){
+        modelMap.addAttribute("user", user);
+        return "Demo2";
     }
 }

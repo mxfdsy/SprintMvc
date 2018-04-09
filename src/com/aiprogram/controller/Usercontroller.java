@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -61,9 +62,20 @@ public class Usercontroller {
 //        modelMap.addAttribute("user", user);
         return "demo1";
     }
+    //这里在演示请求post的请求
     @RequestMapping("/Demo2")
     public String testUser3(ModelMap modelMap,User user){
         modelMap.addAttribute("user", user);
         return "Demo2";
+    }
+    //阿里巴巴fastjson的演示
+    @RequestMapping("demo3")
+    //ResponseBody 表示调用mvc:message-converters处理数据返回的数据
+    @ResponseBody
+    public User testUser4(){
+       User user =new User();
+       user.setName("吕布");
+       user.setId(14);
+       return user;
     }
 }

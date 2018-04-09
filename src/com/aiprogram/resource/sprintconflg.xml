@@ -11,6 +11,22 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+    <!--使用阿里巴巴的fastjson，注 保持fast的扫描配置在第一位优先扫描否则会406-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean id="fasJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <!--支持什么格式-->
+                <property name="supportedMediaTypes" >
+                    <list>
+                        <!--这里的顺序不能反,一定要先写text/html,不然会出现下载提示-->
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+        <!--使用注解-->
+    </mvc:annotation-driven>
     <!--包扫描-->
     <context:component-scan base-package="com.aiprogram.**"/>
     <!--添加MVC的注解-->
@@ -23,4 +39,5 @@
         <!--引入新的东西-->
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
     </bean>
+
 </beans>

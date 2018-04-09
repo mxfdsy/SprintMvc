@@ -218,5 +218,14 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/IdeaCode/localrepositorty/jar包/MvnRepo/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

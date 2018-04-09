@@ -30,6 +30,7 @@
           <element id="file-copy" path="F:/IdeaCode/localrepositorty/jar包/MvnRepo/org/springframework/spring-webmvc/4.1.4.RELEASE/spring-webmvc-4.1.4.RELEASE.jar" />
           <element id="file-copy" path="F:/IdeaCode/localrepositorty/jar包/MvnRepo/org/springframework/spring-context/4.1.4.RELEASE/spring-context-4.1.4.RELEASE.jar" />
           <element id="file-copy" path="F:/IdeaCode/localrepositorty/jar包/MvnRepo/org/springframework/spring-expression/4.1.4.RELEASE/spring-expression-4.1.4.RELEASE.jar" />
+          <element id="file-copy" path="F:/IdeaCode/localrepositorty/jar包/MvnRepo/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.jar" />
         </element>
       </element>
     </root>

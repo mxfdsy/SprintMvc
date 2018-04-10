@@ -1,5 +1,7 @@
 package com.aiprogram.entity;
 
+import org.springframework.web.bind.annotation.ResponseBody;
+
 /**
  * Created by 没想法的岁月 on 2018/4/7.
  */

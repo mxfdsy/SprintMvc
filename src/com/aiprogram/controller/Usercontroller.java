@@ -3,9 +3,7 @@ package com.aiprogram.controller;
 import com.aiprogram.entity.User;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -69,7 +67,7 @@ public class Usercontroller {
         return "Demo2";
     }
     //阿里巴巴fastjson的演示
-    @RequestMapping("demo3")
+    @RequestMapping("/demo3")
     //ResponseBody 表示调用mvc:message-converters处理数据返回的数据
     @ResponseBody
     public User testUser4(){
@@ -77,5 +75,10 @@ public class Usercontroller {
        user.setName("吕布");
        user.setId(14);
        return user;
+    }
+    //使用postman在前端传入Json后直接到user对象中去,设置了值接受post请求，在参数加上@ResponseBody 表示把接收过来的json转到User对象中去
+    @RequestMapping(value = "/demo4" ,method = RequestMethod.POST)
+    public String testUser5(@RequestBody User user){
+        return "user";
     }
 }

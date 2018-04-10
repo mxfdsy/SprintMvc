@@ -39,5 +39,14 @@
         <!--引入新的东西-->
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
     </bean>
-
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <!--这里是在拦截所有的请求-->
+        <!--<bean class="com.aiprogram.interceptor.SpringMvcInterceptor"/>-->
+        <!--拦截指定路径的请求-->
+        <mvc:interceptor>
+            <mvc:mapping path="/user/demo2"/>
+            <bean class="com.aiprogram.interceptor.SpringMvcInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

@@ -12,7 +12,7 @@
 </head>
 <body>
 这个页面是来演示post提交的参数信息的
-<form method="post" action="/user/Demo2">
+<form method="post" action="/user/demo2">
     <input type="text" name="id">
     <input type="text" name="name">
     <input type="submit" value="提交">

@@ -61,10 +61,10 @@ public class Usercontroller {
         return "demo1";
     }
     //这里在演示请求post的请求
-    @RequestMapping("/Demo2")
+    @RequestMapping("/demo2")
     public String testUser3(ModelMap modelMap,User user){
         modelMap.addAttribute("user", user);
-        return "Demo2";
+        return "demo2";
     }
     //阿里巴巴fastjson的演示
     @RequestMapping("/demo3")
@@ -79,6 +79,8 @@ public class Usercontroller {
     //使用postman在前端传入Json后直接到user对象中去,设置了值接受post请求，在参数加上@ResponseBody 表示把接收过来的json转到User对象中去
     @RequestMapping(value = "/demo4" ,method = RequestMethod.POST)
     public String testUser5(@RequestBody User user){
+
+
         return "user";
     }
 }

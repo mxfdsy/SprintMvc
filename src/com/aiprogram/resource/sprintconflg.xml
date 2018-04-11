@@ -49,4 +49,10 @@
             <bean class="com.aiprogram.interceptor.SpringMvcInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--文件最大值-->
+        <property name="maxUploadSize" value="500000"/>
+        <property name="maxInMemorySize" value="500000"/>
+        <property name="defaultEncoding" value="uft-8"/>
+    </bean>
 </beans>

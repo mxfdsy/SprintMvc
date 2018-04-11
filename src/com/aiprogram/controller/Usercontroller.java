@@ -4,6 +4,7 @@ import com.aiprogram.entity.User;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -82,5 +83,9 @@ public class Usercontroller {
 
 
         return "user";
+    }
+    public String testUser5(MultipartFile file,HttpServletRequest request){
+
+        return "demo4";
     }
 }

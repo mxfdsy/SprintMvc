@@ -1,6 +1,11 @@
 package com.aiprogram.controller;
 
 import com.aiprogram.entity.User;
+import org.apache.commons.io.FileUtils;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.security.PublicKey;
 
 /**
@@ -84,8 +91,44 @@ public class Usercontroller {
 
         return "user";
     }
-    public String testUser5(MultipartFile file,HttpServletRequest request){
-
+    //演示文件的上传
+    @RequestMapping("/upload")
+    public String testUser5(MultipartFile file,HttpServletRequest request) throws IOException {
+        //获取文件的名称
+        String name = file.getOriginalFilename();
+        //判断文件的格式
+//        name.equals(".mp3");
+        //创建一个文件对象来存放文件
+        File uploadF = new File("/" + name);
+        //把上传的文件存放都爱uploadF文件夹中
+        file.transferTo(uploadF);
         return "demo4";
     }
+
+    @RequestMapping("/demo4")
+    public String testUser6(){
+
+//        String id = request.getParameter("id");
+//        String name = request.getParameter("name");
+//
+//        User user = new User();
+//        user.setId(16);
+//        user.setName("SprintMvc");
+//        modelMap.addAttribute("user", user);
+        return "demo4";
+    }
+    //演示文件的下载
+    @RequestMapping("down")
+    public ResponseEntity<byte []> download() throws IOException {
+        String path = "F:/MM.jpg";
+        File file = new File(path);
+        HttpHeaders headers  = new HttpHeaders();
+        //告诉服务器（这里应该指我们本地）这个图片资源在哪里
+        headers.setContentDispositionFormData("attachment",path);
+        //告诉服务器格式是什么
+        headers.setContentType(MediaType.IMAGE_JPEG);
+        //返回一个响应体（参数都是定死，具体见Http协议）
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),headers, HttpStatus.CREATED);
+    }
+
 }

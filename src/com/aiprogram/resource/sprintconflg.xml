@@ -53,6 +53,6 @@
         <!--文件最大值-->
         <property name="maxUploadSize" value="500000"/>
         <property name="maxInMemorySize" value="500000"/>
-        <property name="defaultEncoding" value="uft-8"/>
+        <property name="defaultEncoding" value="utf-8"/>
     </bean>
 </beans>

@@ -11,11 +11,12 @@
     <title>Title</title>
 </head>
 <body>
-这个页面是来演示文件的上传和下载的
-<form method="post" action="/user/demo2">
+这个页面是来演示文件下载的
+<form method="post" action="/user/upload" enctype="multipart/form-data">
     <input type="text" name="id">
-    <input type="text" name="name">
+    <input type="file" name="file">
     <input type="submit" value="提交">
 </form>
+<a href="/user/down">点我下载</a>
 </body>
 </html>

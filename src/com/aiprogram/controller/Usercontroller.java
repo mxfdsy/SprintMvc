@@ -88,7 +88,6 @@ public class Usercontroller {
     @RequestMapping(value = "/demo4" ,method = RequestMethod.POST)
     public String testUser5(@RequestBody User user){
 
-
         return "user";
     }
     //演示文件的上传

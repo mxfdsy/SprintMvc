@@ -194,7 +194,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://F:/IdeaCode/localrepositorty/jar包/MvnRepo/org/springframework/spring-tx/4.1.4.RELEASE/spring-tx-4.1.4.RELEASE.jar!/" />
+          <root url="jar://F:/IdeaCode/localrepositorty/jar包/MvnRepo/org/aspectj/aspectjweaver/1.8.5/aspectjweaver-1.8.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -203,7 +203,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://F:/IdeaCode/localrepositorty/jar包/MvnRepo/org/aspectj/aspectjweaver/1.8.5/aspectjweaver-1.8.5.jar!/" />
+          <root url="jar://F:/IdeaCode/localrepositorty/jar包/MvnRepo/org/springframework/spring-tx/4.1.4.RELEASE/spring-tx-4.1.4.RELEASE.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -14,8 +14,9 @@
 这个页面是来演示文件下载的
 <form method="post" action="/user/upload" enctype="multipart/form-data">
     <input type="text" name="id">
-    <input type="file" name="file">
+    <input type="text" name="id">
     <input type="submit" value="提交">
+    <input type="file" name="file">
 </form>
 <a href="/user/down">点我下载</a>
 </body>
